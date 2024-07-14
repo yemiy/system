@@ -16,6 +16,7 @@ class RegisterFormRequest extends FormRequest
         return true; //[ *1.変更：default=false ]
     }
 
+
     public function getValidatorInstance()
     {
       $old_year = $this->input('old_year');
@@ -76,7 +77,7 @@ class RegisterFormRequest extends FormRequest
         'password.unique' => '※パスワードは現在使われています',
         'password.confirmed' => '※パスワードと確認用と一致させてください',
         'password.min' => '※パスワードは8文字以上20文字以内で入力してください',
-        'password.max' => '※パスワードは8文字以上20文字以内で入力してください',
+        'password.max' => '※パスワードは8文字以上20文字以内で入力してください。',
         'password.required' => '※パスワードは必須です',
       ];
     }
