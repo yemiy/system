@@ -46,11 +46,19 @@
       <div>
         @if($user->role == 4)
         <span>選択科目 :</span>
+        @forelse($user->subjects as $subject)
+          <span>{{$subject->subject}}</span>
+        @empty
+        <div><span>選択科目はありません。</span></div>
+        @endforelse
+
         @endif
       </div>
     </div>
     @endforeach
   </div>
+
+
   <div class="search_area w-25 border">
     <div class="">
       <div>
@@ -72,6 +80,7 @@
       </div>
       <div class="">
         <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
+<!--ここを追加-->
         <div class="search_conditions_inner">
           <div>
             <label>性別</label>
@@ -91,7 +100,10 @@
           </div>
           <div class="selected_engineer">
             <label>選択科目</label>
-          </div>
+      <span><input type="checkbox" name="subjects[]" value="1" form="userSearchRequest">国語</span>
+      <span><input type="checkbox" name="subjects[]" value="2" form="userSearchRequest">数学</span>
+      <span><input type="checkbox" name="subjects[]" value="3" form="userSearchRequest">英語</span>
+      </div>
         </div>
       </div>
       <div>

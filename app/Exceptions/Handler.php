@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use App\Http\Controllers\Controller;
+use Illuminate\Session\TokenMismatchException; // これを追加
 
 class Handler extends ExceptionHandler
 {
@@ -48,8 +50,18 @@ class Handler extends ExceptionHandler
      *
      * @throws \Exception
      */
-    public function render($request, Exception $exception)
-    {
-        return parent::render($request, $exception);
+
+
+
+
+public function render($request, Exception $exception)
+{
+    if ($exception instanceof TokenMismatchException) {
+        // セッション切れの際はログイン画面にリダイレクト
+        return redirect()->route('loginView'); // 修正: 'login' ではなく 'loginView' を使用
     }
+
+    return parent::render($request, $exception);
+}
+
 }

@@ -13,19 +13,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--フリーアイコンダウンロード読み込み-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="all_content">
   <div class="d-flex">
     <div class="sidebar">
       @section('sidebar')
-      <p><a href="{{ route('top.show') }}">トップ</a></p>
-      <p><a href="/logout">ログアウト</a></p>
-      <p><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}">スクール予約</a></p>
-      <p><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
-      <p><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
-      <p><a href="{{ route('post.show') }}">掲示板</a></p>
-      <p><a href="{{ route('user.show') }}">ユーザー検索</a></p>
+      <p><a href="{{ route('top.show') }}"><i class="fas fa-home">マイページ</i></a></p>
+      <p><a href="/logout"><img src="{{ asset('image/i_logout.png')}}" alt="矢印" width="23" height="23">ログアウト</a></p>
+      <p><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}"><i class="fas fa-calendar" width="38" height="38">スクール予約</i></a></p>
+
+<!--講師にだけ表示    -->
+    @can('admin')
+      <p><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}"><img src="{{ asset('image/i_reserve.png')}}" alt="予約確認" width="35" height="35" class="i_reserve">スクール予約確認</a></p>
+      <p><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}"><img src="{{ asset('image/calendar_plus.png')}}" alt="枠登録" width="23" height="23">スクール枠登録</a></p>
+      @endcan
+
+      <p><a href="{{ route('post.show') }}"><img src="{{asset('image/chat.png') }}" alt="掲示板" width="30" height="30" class="chat">掲示板</a></p>
+      <p><a href="{{ route('user.show') }}"><img src="{{ asset('image/i_user.png' )}}" alt="ユーザー" width="30" height="30">ユーザー検索</img></a></p>
       @show
     </div>
     <div class="main-container">

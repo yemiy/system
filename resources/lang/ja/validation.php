@@ -150,6 +150,17 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+         'main_category_name' => [
+        'unique' => 'このカテゴリはすでに存在します。',
+        'max'=>'100文字以内で入力してください。',
+        'required'=>'入力必須項目です。',
+         ],
+
+         'sub_category_name'=>[
+            'unique'=>'このカテゴリーはすでに存在します。',
+            'max'=>'100文字以内で入力してください。',
+            'required'=>'入力必須項目です。',
+         ]
     ],
 
     /*

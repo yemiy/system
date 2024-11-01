@@ -31,6 +31,9 @@ Route::group(['middleware' => 'auth'], function(){
                 Route::get('/calendar/{user_id}', 'CalendarsController@show')->name('calendar.general.show');
                 Route::post('/reserve/calendar', 'CalendarsController@reserve')->name('reserveParts');
                 Route::post('/delete/calendar', 'CalendarsController@delete')->name('deleteParts');
+
+
+
             });
             Route::namespace('Admin')->group(function(){
                 Route::get('/calendar/{user_id}/admin', 'CalendarsController@show')->name('calendar.admin.show');
@@ -44,6 +47,7 @@ Route::group(['middleware' => 'auth'], function(){
             Route::get('/bulletin_board/input', 'PostsController@postInput')->name('post.input');
             Route::get('/bulletin_board/like', 'PostsController@likeBulletinBoard')->name('like.bulletin.board');
             Route::get('/bulletin_board/my_post', 'PostsController@myBulletinBoard')->name('my.bulletin.board');
+             Route::get('/bulletin_board/post_category/{id}', 'PostsController@postCategory')->name('post.category');
             Route::post('/bulletin_board/create', 'PostsController@postCreate')->name('post.create');
             Route::post('/create/main_category', 'PostsController@mainCategoryCreate')->name('main.category.create');
             Route::post('/create/sub_category', 'PostsController@subCategoryCreate')->name('sub.category.create');

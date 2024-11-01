@@ -14,6 +14,8 @@
         <span>{{ $subject->subject }}</span>
         @endforeach
       </div>
+
+
       <div class="">
         @can('admin')
         <span class="subject_edit_btn">選択科目の編集</span>

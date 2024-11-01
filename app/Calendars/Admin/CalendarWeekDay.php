@@ -4,6 +4,7 @@ namespace App\Calendars\Admin;
 use Carbon\Carbon;
 use App\Models\Calendars\ReserveSettings;
 
+
 class CalendarWeekDay{
   protected $carbon;
 
@@ -21,28 +22,51 @@ class CalendarWeekDay{
 
   function everyDay(){
     return $this->carbon->format("Y-m-d");
-  }
-
-  function dayPartCounts($ymd){
+  }function dayPartCounts($ymd) {
     $html = [];
+    // 各時間帯の予約設定を取得
     $one_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first();
     $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
     $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
 
     $html[] = '<div class="text-left">';
-    if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部</p>';
+
+    // 1部の情報を追加
+    if ($one_part) {
+        $reservedCount = $one_part->users->count(); // 予約済みユーザー数を取得
+        $html[] = "<p class='day_part m-0 pt-1'>
+                        <a href='" . route('calendar.admin.detail', ['date' => $ymd, 'part' => 1]) . "'>
+                        1部: {$reservedCount}人
+                      </a>
+                    </p>";
     }
-    if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部</p>';
+
+    // 2部の情報を追加
+    if ($two_part) {
+        $reservedCount = $two_part->users->count(); // 予約済みユーザー数を取得
+        $html[] = "<p class='day_part m-0 pt-1'>
+                      <a href='" . route('calendar.admin.detail', ['date' => $ymd, 'part' => 2]) . "'>
+                        2部: {$reservedCount}人
+                      </a>
+                    </p>";
     }
-    if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部</p>';
+
+
+    // 3部の情報を追加
+    if ($three_part) {
+        $reservedCount = $three_part->users->count(); // 予約済みユーザー数を取得
+        $html[] = "<p class='day_part m-0 pt-1'>
+                      <a href='" . route('calendar.admin.detail', ['date' => $ymd, 'part' => 3]) . "'>
+                        3部: {$reservedCount}人
+                      </a>
+                    </p>";
     }
+
     $html[] = '</div>';
 
     return implode("", $html);
-  }
+}
+
 
 
   function onePartFrame($day){

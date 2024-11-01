@@ -16,7 +16,7 @@
 <body>
   <form action="{{ route('registerPost') }}" method="POST" style="background-color:#ECF1F6">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="vh-75 border p-3 register_menu"> <!-- classにw-25いる？ -->
+      <div class="vh-75 border p-3 register_menu" style="background-color:#FFFFFF"> <!-- classにw-25いる？ -->
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
@@ -60,11 +60,11 @@
           </div>
           <!-- メールアドレス -->
           <div class="mb-3">
+            <span class="text-danger">{{$errors->first('mail_address')}}</span>
             <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
             <div class="border-bottom border-primary">
               <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
             </div>
-            <span class="text-danger">{{$errors->first('mail_address')}}</span>
           </div>
         </div>
         <div class="mb-3">
@@ -204,12 +204,12 @@
             <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
-        <div class="mt-5 text-right">
+        <div class="reg-btn mt-5 text-right">
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
 
-        </div>
+       </div>
         <div class="text-center" style="background-color:#FFF;">
-          <a href="{{ route('loginView') }}">ログイン</a>
+          <a href="{{ route('loginView') }}">ログインはこちら</a>
         </div>
       </div>
       {{ csrf_field() }}

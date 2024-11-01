@@ -18,7 +18,9 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->comment('ユーザーid');
             $table->string('post_title', 191)->index()->comment('タイトル');
             $table->string('post', 191)->index()->comment('投稿内容');
-            $table->timestamp('created_at')->nullable()->comment('登録日時');
+           // $table->timestamp('created_at')->nullable()->comment('登録日時');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +31,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::drop('posts');
     }
 }

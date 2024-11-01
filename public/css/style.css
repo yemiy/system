@@ -20,14 +20,40 @@ li {
 /*ログイン画面のロゴ*/
 .icon {
   position: absolute;
-  margin-top: 120px;
-  margin-left: 660px;
+  margin-top: 118px;
+  margin-left: 695px;
 }
 
+.log-box {
+  margin-top: 35px;
+  margin-left: 10px;
+}
+
+.log-btn {
+  margin-bottom: 10px;
+}
+
+/*新規登録*/
+.reg-btn {
+  padding-bottom: 5px;
+}
+
+/*サイドバーアイコン*/
+.i_reserve {
+  margin-left: -7px;
+  margin-right: -6px;
+  position: relative;
+}
+
+.fa-calendar {
+  margin-left: 2px;
+  margin-right: 3px;
+  position: relative;
+}
 
 /* サイドバー */
 .sidebar {
-  width: 150px;
+  width: 175px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -41,52 +67,139 @@ li {
   color: #FFF;
 }
 
+
 /* トップページ */
 .user_status {
   border-radius: 10px;
   background: #FFF;
 }
 
+
+
 /* スクール予約関連 */
-.day-blank {
-  background: #D3D3D3;
+/* カレンダー全体のスタイル */
+.calendar {
+  width: 100%;
+  max-width: 800px;
+  /* カレンダーの最大幅 */
+  margin: 0 auto;
+  /* カレンダーを中央に配置 */
+  background: #FFF;
+  /* 背景色を白に設定 */
+  border-radius: 10px;
+  /* 角を丸くする */
+  border: 1px solid #DDD;
+  /* カレンダー全体の枠線 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* 軽いシャドウを追加 */
 }
 
-.day-sat {
-  color: #0000FF;
+/* テーブルのスタイル */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  /* テーブルの境界線を重ね合わせる */
 }
 
-.day-sun {
-  color: #FF0000;
+/* テーブルのヘッダーのスタイル */
+.table thead th {
+  background: #03AAD2;
+  /* ヘッダーの背景色 */
+  color: #FFF;
+  /* ヘッダーのテキストの色 */
+  padding: 10px;
+  /* ヘッダーのパディング */
+  border: 1px solid #DDD;
+  /* ヘッダーの枠線 */
+  font-size: 14px;
+  /* フォントサイズ */
+  text-align: center;
+  /* テキストを中央に配置 */
+
 }
 
+/* テーブルのセルのスタイル */
+.table td {
+  border: 1px solid #DDD;
+  /* セルの枠線 */
+  padding: 10px;
+  /* セルのパディング */
+  vertical-align: top;
+  /* 上寄せの配置 */
+  text-align: center;
+  /* テキストを中央に配置 */
+  position: relative;
+  /* 相対位置を設定 */
+}
+
+/* 日付のスタイル */
+.table td .date {
+  font-size: 16px;
+  /* 日付のフォントサイズ */
+  font-weight: bold;
+  /* 日付のフォントを太く */
+}
+
+/* 受付終了のテキスト */
+.receipt-ended {
+  position: absolute;
+  bottom: 5px;
+  /* セルの下端に少し距離を置く */
+  left: 50%;
+  /* セルの中央に配置 */
+  transform: translateX(-50%);
+  /* セルの中央に正確に配置 */
+  font-size: 12px;
+  color: red;
+  /* テキストの色を赤に設定 */
+  padding: 2px;
+  /* パディングを少し追加 */
+}
+
+/* 過去日のスタイル */
 .past-day {
   background: #EEE;
+  /* 背景色を薄いグレーに設定 */
+  color: #999;
+  /* テキストの色を薄いグレーに設定 */
 }
 
-.calendar-td {
-  min-width: 100px;
+/* 土曜日のスタイル */
+.day-sat {
+  color: #0000FF;
+  /* 青色 */
 }
 
-.day_part {
-  color: #494949;
-  font-size: 12px;
+/* 日曜日のスタイル */
+.day-sun {
+  color: #FF0000;
+  /* 赤色 */
 }
 
-.adjust-table {
-  width: 70% !important;
+/* 空白の日のスタイル */
+.day-blank {
+  background: #D3D3D3;
+  /* 空白の日の背景色を薄いグレーに設定 */
 }
 
-.adjust-table td {
-  padding: 0 !important;
+/* カレンダーの調整エリア */
+.adjust-area {
+  text-align: center;
+  /* テキストを中央揃え */
+  padding: 5px;
+  /* パディングを追加 */
 }
 
-.adjust-area p {
-  justify-content: space-around;
-}
-
+/* 調整エリアのボタン */
 .adjust-table-btn {
   width: 70%;
+}
+
+/*予約キャンセルモーダル*/
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: none;
 }
 
 /* モーダル */
@@ -140,9 +253,14 @@ li {
   border-radius: 10px;
 }
 
+/*いいね・コメントボタン*/
 .post_bottom_area {
   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
+
 
 .like_btn,
 .un_like_btn {
@@ -159,12 +277,97 @@ li {
   color: red;
 }
 
+/*投稿編集エラーメッセージ文*/
+.post-em {
+  position: absolute;
+  left: 16%;
+}
+
 /* 掲示板 詳細画面 */
 .contributor {
   font-size: 12px;
   color: #999;
   font-weight: bold;
 }
+
+/*詳細画面のサブカテゴリー表示*/
+.sub-cate {
+  background: #c0c0c0;
+  color: #fff;
+  padding-left: 5px;
+  border-radius: 5px;
+  padding-right: 5px;
+  height: 21px;
+  font-size: 14px;
+  text-align: left;
+  /* ここで左寄せにしています */
+  margin: 0;
+}
+
+/*投稿一覧画面にサブカテゴリーつける*/
+.sub-cate2 {
+  display: inline-flex;
+  justify-content: flex-start;
+  /*左端に配置*/
+  background: #c0c0c0;
+  color: #fff;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*一覧ページのカテゴリー表示の表記  */
+.sub-list {
+  /*
+  background: #a9a9a9;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  display: inline-flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  */
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.sub li {
+  display: block;
+}
+
+.cate-list a {
+  text-decoration: none;
+
+}
+
+
+/*カテゴリー投稿のサイドバー*/
+.other_area {
+  position: absolute;
+  /* 絶対位置に設定 */
+  top: 20px;
+  /* 上からの距離 */
+  right: 50px;
+  /* 右からの距離 */
+  width: 350px;
+  /* サイドバーの幅 */
+  /* その他のスタイル */
+  margin-left: 5px;
+}
+
+.cate-list {
+  /*  font-size: 16px;
+  font-weight: 300; */
+  padding: 0;
+  list-style-type: none;
+}
+
+.main_category {
+  display: block;
+  margin-bottom: 10px;
+}
+
 
 .detsail_post_title {
   font-size: 14px;
@@ -213,6 +416,14 @@ li {
   font-size: 12px;
 }
 
+/*いいね数・コメント数*/
+.post_status {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  /*右端に配置*/
+}
+
 .post_status span {
   font-size: 12px;
 }
@@ -244,6 +455,15 @@ li {
 .sub_categories li input {
   list-style: none;
   cursor: pointer;
+}
+
+/*投稿のカテゴリー・サブカテゴリ―文字*/
+.t-cate option {
+  color: #696969;
+}
+
+.t-cate optgroup {
+  font-weight: 250;
 }
 
 /* ユーザー検索 */
@@ -285,4 +505,10 @@ li {
 
 .subject_inner {
   display: none;
+}
+
+
+.selected_engineer {
+  display: flex;
+  flex-direction: column;
 }

@@ -75,7 +75,7 @@ class RegisterFormRequest extends FormRequest
         'birth_day.yesterday' => '※2000年1月1日から今日まで入力してください',
         'birth_day.before' => '※2000年1月1日から今日まで入力してください',
         'password.unique' => '※パスワードは現在使われています',
-        'password.confirmed' => '※パスワードと確認用と一致させてください',
+        'password.confirmed' => '※パスワードと確認用と一致させてください。',
         'password.min' => '※パスワードは8文字以上20文字以内で入力してください',
         'password.max' => '※パスワードは8文字以上20文字以内で入力してください。',
         'password.required' => '※パスワードは必須です',
