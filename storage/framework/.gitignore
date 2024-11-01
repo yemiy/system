@@ -12,3 +12,4 @@ down
 /.env
 /public/storage
 /storage/*.key
+git remote add origin https://github.com/yemiy/system.git

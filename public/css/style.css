@@ -343,7 +343,7 @@ li {
 
 
 /*カテゴリー投稿のサイドバー*/
-.other_area {
+.side-box {
   position: absolute;
   /* 絶対位置に設定 */
   top: 20px;
@@ -354,6 +354,7 @@ li {
   /* サイドバーの幅 */
   /* その他のスタイル */
   margin-left: 5px;
+
 }
 
 .cate-list {
