@@ -15,7 +15,8 @@
 </head>
 <body>
   <form action="{{ route('registerPost') }}" method="POST" style="background-color:#ECF1F6">
-    <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
+
+    <div class="w-130 vh-100 d-flex" style="align-items:center; justify-content:center;">
       <div class="vh-75 border p-3 register_menu" style="background-color:#FFFFFF"> <!-- classにw-25いる？ -->
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">

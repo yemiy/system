@@ -21,7 +21,7 @@
   <div class="d-flex">
     <div class="sidebar">
       @section('sidebar')
-      <p><a href="{{ route('top.show') }}"><i class="fas fa-home">マイページ</i></a></p>
+      <p class="home-b"><a href="{{ route('top.show') }}"><i class="fas fa-home">マイページ</i></a></p>
       <p><a href="/logout"><img src="{{ asset('image/i_logout.png')}}" alt="矢印" width="23" height="23">ログアウト</a></p>
       <p><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}"><i class="fas fa-calendar" width="38" height="38">スクール予約</i></a></p>
 

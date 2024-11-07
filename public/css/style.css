@@ -38,6 +38,8 @@ li {
   padding-bottom: 5px;
 }
 
+
+
 /*サイドバーアイコン*/
 .i_reserve {
   margin-left: -7px;
@@ -67,6 +69,10 @@ li {
   color: #FFF;
 }
 
+
+.home-b {
+  padding-right: 15px;
+}
 
 /* トップページ */
 .user_status {
@@ -254,6 +260,13 @@ li {
 }
 
 /*いいね・コメントボタン*/
+
+.post-title {
+  color: black;
+  font-weight: 600;
+}
+
+
 .post_bottom_area {
   justify-content: space-between;
   display: flex;
@@ -262,8 +275,7 @@ li {
 }
 
 
-.like_btn,
-.un_like_btn {
+.like_btn {
   cursor: pointer;
 }
 
@@ -343,10 +355,10 @@ li {
 
 
 /*カテゴリー投稿のサイドバー*/
-.side-box {
+.other_area {
   position: absolute;
   /* 絶対位置に設定 */
-  top: 20px;
+  top: 30px;
   /* 上からの距離 */
   right: 50px;
   /* 右からの距離 */
@@ -354,8 +366,67 @@ li {
   /* サイドバーの幅 */
   /* その他のスタイル */
   margin-left: 5px;
-
+  border: none;
 }
+
+/*投稿ボタン*/
+.c-po {
+  display: block;
+  height: 35px;
+  width: 290px;
+  border-radius: 8px;
+  background-color: #03AAD2;
+  color: #fff;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 19px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.c-po a:link {
+  color: #fff;
+}
+
+.c-po a:visited {
+  color: #fff;
+}
+
+.c-po a:hover {
+  color: #fff;
+}
+
+.c-po a:active {
+  color: #fff;
+}
+
+/*投稿検索*/
+
+.k-box {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #C3C4C5;
+  border-radius: 8px 0 0 8px;
+  width: 215px;
+  height: 38px;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+}
+
+.key-b {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 0 8px 8px 0;
+  height: 38px;
+  width: 81px;
+  position: absolute;
+  border: 1px solid #C3C4C5;
+  background-color: #03AAD2;
+  text-align: center;
+  color: #FFF;
+}
+
+
 
 .cate-list {
   /*  font-size: 16px;
@@ -422,6 +493,8 @@ li {
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  position: fixed;
+  right: 500px;
   /*右端に配置*/
 }
 
@@ -443,14 +516,29 @@ li {
   color: #FFF;
 }
 
-.category_btn {
-  font-size: 12px;
-  border-radius: 5px;
+.category_btn-1 {
+  font-size: 15px;
+  border-radius: 8px;
   padding: 0 5px;
   border: none;
-  background: #999;
+  background-color: #e38eab;
   color: #FFF;
+  width: 145px;
+  height: 35px;
 }
+
+.category_btn-2 {
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 0 5px;
+  border: none;
+  background-color: #ebbc5d;
+  color: #FFF;
+  width: 145px;
+  height: 35px;
+}
+
+
 
 .main_categories span,
 .sub_categories li input {
