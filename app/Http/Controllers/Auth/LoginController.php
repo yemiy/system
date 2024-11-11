@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
-
 class LoginController extends Controller
 {
     /*

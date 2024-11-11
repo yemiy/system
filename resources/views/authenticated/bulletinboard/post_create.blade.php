@@ -40,36 +40,37 @@
   @can('admin')
   <div class="w-25 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
-
       <div class="">
+            @if($errors->has('main_category_name'))
+            <span class="error_message">{{ $errors->first('main_category_name') }}</span>
+        @endif<br>
         <p class="m-0">メインカテゴリー</p>
         <form action="{{ route('main.category.create')}}" method="post" id="mainCategoryRequest">
           @csrf
-    @if($errors->has('main_category_name'))
-            <span class="error_message">{{ $errors->first('main_category_name') }}</span>
-        @endif
-        <input type="text" class="w-100" name="main_category_name" >
+
+        <input type="text" class="m-c-name" name="main_category_name" >
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" >
         </form>
-      </div><br><br>
+      </div><br>
 
       <!-- サブカテゴリー追加 -->
-       <div class="">
-        <p>サブカテゴリ―</p>
-
+       <div>
+            @if($errors->has('sub_category_name'))
+            <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
+        @endif<br>
+        <label >サブカテゴリ―</label>
         <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">
         @csrf
+
            <select class="w-100" name="main_category_id">
             @foreach($main_categories as $main_category)
             <option value="{{ $main_category->id }}">{{ $main_category->main_category }}</option>
             @endforeach
           </select><br><br>
 
-            @if($errors->has('sub_category_name'))
-            <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
-        @endif
-      <input type="text" class="w-100" name="sub_category_name" >
-      <input type="submit" value="追加" class="w-100 btn btn-primary p-0" >
+
+      <input type="text" class="m-c-name" name="sub_category_name" >
+      <input type="submit" value="追加" class="w-100 btn btn-primary" >
 </form>
       </div>
 

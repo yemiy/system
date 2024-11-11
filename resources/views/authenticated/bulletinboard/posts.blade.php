@@ -29,10 +29,15 @@
 
           <div class="like-come">
             @if(Auth::user()->is_Like($post->id))
-            <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
-            <span class="like_counts{{ $post->id }}">{{$like->likeCounts($post->id)}}</span> </p>
+            <p class="m-0">
+              <i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
+            <span class="like_counts{{ $post->id }}">{{$like->likeCounts($post->id) ?? 0}}</span> </p>
             @else
-            <p class="m-0"><i class="fas fa-heart like_btn" post_id="{{ $post->id }}"></i><span class="like_counts{{ $post->id }}"></span></p>
+            <p class="m-0">
+              <i class="fas fa-heart like_btn" post_id="{{ $post->id }}"></i>
+              <span class="like_counts{{ $post->id }}">
+                {{$like->likeCounts($post->id) ?? 0}}
+              </span></p>
             @endif
           </div>
 

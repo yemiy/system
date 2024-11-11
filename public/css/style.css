@@ -59,10 +59,24 @@ li {
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
+  padding-top: 20px;
+  overflow-y: auto;
+  /* スクロール対応 */
+  position: fixed;
+  /* 固定表示 */
+  top: 0;
+  left: 0;
 }
 
 .main-container {
   width: 100%;
+  margin-left: 175px;
+  /* サイドバーの幅と合わせる */
+  padding: 20px;
+  /* 必要に応じて余白を設定 */
+  height: 100vh;
+  overflow-y: auto;
+  /* メイン画面にスクロールが必要な場合 */
 }
 
 .sidebar p a {
@@ -321,11 +335,11 @@ li {
   display: inline-flex;
   justify-content: flex-start;
   /*左端に配置*/
-  background: #c0c0c0;
+  background: #03AAD2;
   color: #fff;
-  border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+
+  border-radius: 7px;
+  padding: 3px 9px 3px 9px;
 }
 
 /*一覧ページのカテゴリー表示の表記  */
@@ -352,7 +366,6 @@ li {
   text-decoration: none;
 
 }
-
 
 /*カテゴリー投稿のサイドバー*/
 .other_area {
@@ -440,6 +453,12 @@ li {
   margin-bottom: 10px;
 }
 
+.m-c-name {
+  margin-bottom: 15px;
+  width: 255px;
+}
+
+
 
 .detsail_post_title {
   font-size: 14px;
@@ -493,13 +512,12 @@ li {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  position: fixed;
-  right: 500px;
-  /*右端に配置*/
+
 }
 
 .post_status span {
   font-size: 12px;
+  margin-left: 5px;
 }
 
 /* 掲示板　カテゴリー */
