@@ -5,25 +5,32 @@
   <div class="w-50 mt-5">
     <div class="m-3 detail_container">
       <div class="p-3">
-        <div class="detail_inner_head">
+
+          <div>
+           @if($errors->first('post_title'))
+      <span class="error_message">{{ $errors->first('post_title') }}</span>
+      @endif
+      </div>
+
+        <div>
+           @if($errors->first('post_body'))
+      <span class="error_message">{{ $errors->first('post_body') }}</span>
+      @endif
+      </div>
+
+    <div class="detail_inner_head">
         <!--サブカテゴリ―の表示-->
           <div class="sub-cate2">
-
        @foreach($post->subCategories as $category)
        <li>{{ $category->sub_category}}</li>
        @endforeach
           </div>
 
-         <p class="post-em">
-           @if($errors->first('post_body'))
-      <span class="error_message">{{ $errors->first('post_body') }}</span>
-      @endif
-      </p>
           @if(Auth::user()->id == $post->user_id)
-          <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集 </span>
+          <div class="detail-b">
+            <span class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集 </span>
 
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('削除してよろしいですか？')">削除</a>
+            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('削除してよろしいですか？')" class="btn btn-danger">削除</a>
           </div>
 
 <!--編集モーダル内-->
@@ -96,7 +103,7 @@
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <input type="submit" class="btn btn-primary come-post" form="commentRequest" value="投稿">
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>
