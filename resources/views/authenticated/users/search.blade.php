@@ -96,15 +96,15 @@
 
         <div class="search_conditions_inner">
 
-          <div>
             <label>性別</label>
+            <ul>
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
-          </div>
+            </ul>
 
-          <div>
             <label>権限</label>
+            <ul>
             <select name="role" form="userSearchRequest" class="engineer">
               <option selected disabled>----</option>
               <option value="1">教師(国語)</option>
@@ -112,24 +112,26 @@
               <option value="3">教師(英語)</option>
               <option value="4" class="">生徒</option>
             </select>
-          </div>
+            </ul>
 
           <div class="selected_engineer">
             <label>選択科目</label>
-      <span><input type="checkbox" name="subjects[]" value="1" form="userSearchRequest">国語</span>
-      <span><input type="checkbox" name="subjects[]" value="2" form="userSearchRequest">数学</span>
-      <span><input type="checkbox" name="subjects[]" value="3" form="userSearchRequest">英語</span>
+      <ul>
+      <span>国語<input type="checkbox" name="subjects[]" value="1" form="userSearchRequest" style="margin-right: 10px;"></span>
+      <span>数学<input type="checkbox" name="subjects[]" value="2" form="userSearchRequest" style="margin-right: 10px;"></span>
+      <span>英語<input type="checkbox" name="subjects[]" value="3" form="userSearchRequest" style="margin-right: 10px;"></span>
+      </ul>
       </div>
 
         </div>
       </div>
 
-      <div>
-        <input type="reset" value="リセット" form="userSearchRequest">
+      <div class="">
+        <input type="submit" value="検索" form="userSearchRequest" class="key-b2">
       </div>
 
-      <div>
-        <input type="submit" name="search_btn" value="検索" form="userSearchRequest">
+     <div>
+        <input type="reset" value="リセット" form="userSearchRequest" class="key-b3">
       </div>
 
     </div>
