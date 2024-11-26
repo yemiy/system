@@ -117,16 +117,13 @@ li {
 /* テーブルのスタイル */
 .table {
   width: 100%;
+  table-layout: fixed;
+  /* セル幅を均等に */
   border-collapse: collapse;
-  /* テーブルの境界線を重ね合わせる */
 }
 
 /* テーブルのヘッダーのスタイル */
 .table thead th {
-  background: #03AAD2;
-  /* ヘッダーの背景色 */
-  color: #FFF;
-  /* ヘッダーのテキストの色 */
   padding: 10px;
   /* ヘッダーのパディング */
   border: 1px solid #DDD;
@@ -205,15 +202,45 @@ li {
 /* カレンダーの調整エリア */
 .adjust-area {
   text-align: center;
+  border-spacing: 0;
   /* テキストを中央揃え */
-  padding: 5px;
-  /* パディングを追加 */
+}
+
+.adjust-area input {
+  margin-left: 30px;
+  width: 25px;
+  text-align: center;
 }
 
 /* 調整エリアのボタン */
 .adjust-table-btn {
-  width: 70%;
+  padding-top: 20px;
+  width: 79%;
 }
+
+.p-d {
+  text-align: center;
+  padding-bottom: 6px;
+  font-size: 17px;
+}
+
+.calendar-plus {
+  width: 100%;
+  max-width: 1100px;
+  /* カレンダーの最大幅 */
+  height: auto;
+  margin: 0 auto;
+  /* カレンダーを中央に配置 */
+  background: #FFF;
+  /* 背景色を白に設定 */
+  border-radius: 10px;
+  /* 角を丸くする */
+  border: 1px solid #DDD;
+  /* カレンダー全体の枠線 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* 軽いシャドウを追加 */
+}
+
 
 /*予約キャンセルモーダル*/
 .modal-footer {
