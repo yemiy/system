@@ -4,9 +4,9 @@
 <div class="vh-100 d-flex" style="align-items:center; justify-content:center;">
   <div class="w-50 m-auto h-75">
     <p><span>{{ $date}}日</span><span class="ml-3"> {{ $part}}部</span></p>
-    <div class="h-75 border">
-      <table class="">
 
+    <div class="h-75 border">
+      <table class="fin">
         <tr class="text-center">
           <th class="w-25">ID</th>
           <th class="w-25">名前</th>
@@ -23,6 +23,7 @@
         @endforeach
         @endforeach
       </table>
+
     </div>
   </div>
 </div>

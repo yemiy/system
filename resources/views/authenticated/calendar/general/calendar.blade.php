@@ -8,14 +8,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
 <div class="vh-100 pt-5" style="background:#ECF1F6;">
-  <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
-    <div class="w-75 m-auto border" style="border-radius:5px;">
-      <p class="text-center">{{ $calendar->getTitle() }}</p><!--年月を表示-->
+  <div class="border w-75 h-auto m-auto pt-5 pb-5" style="border-radius:8px; background:#FFF;">
+    <div class="w-75 m-auto" style="border-radius:5px;">
+      <p class="text-center" style="font-size:18px;">{{ $calendar->getTitle() }}</p><!--年月を表示-->
       <div class="">
         {!! $calendar->render() !!} <!--カレンダーを表示-->
       </div>
     </div>
-    <div class="text-right w-75 m-auto">
+    <div class="reserve-b">
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
 

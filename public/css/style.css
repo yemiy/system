@@ -159,19 +159,10 @@ li {
 
 /* 受付終了のテキスト */
 .receipt-ended {
-  position: absolute;
-  bottom: 5px;
-  /* セルの下端に少し距離を置く */
-  left: 50%;
-  /* セルの中央に配置 */
-  transform: translateX(-50%);
-  /* セルの中央に正確に配置 */
-  font-size: 12px;
   color: red;
-  /* テキストの色を赤に設定 */
-  padding: 2px;
-  /* パディングを少し追加 */
+  font-size: 13px;
 }
+
 
 /* 過去日のスタイル */
 .past-day {
@@ -247,6 +238,11 @@ li {
   display: flex;
   justify-content: flex-end;
   border-top: none;
+}
+
+
+.fin {
+  margin-top: 10px;
 }
 
 /* モーダル */
@@ -633,6 +629,11 @@ li {
 
 .reserve_users_area span {
   font-size: 12px;
+}
+
+.reserve-b {
+  padding-top: 18px;
+  padding-left: 800px;
 }
 
 .one_person {

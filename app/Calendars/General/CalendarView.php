@@ -25,8 +25,8 @@ class CalendarView{
     $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
-    $html[] = '<th>土</th>';
-    $html[] = '<th>日</th>';
+    $html[] = '<th style="color:blue;">土</th>';
+    $html[] = '<th style="color:red;">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -76,17 +76,14 @@ class CalendarView{
             } else {
 
 
+            $reserve = $day->authReserveDate($day->everyDay())->first();
+                $reservePart = $reserve->setting_part;
+                  $reservePartText = ($reservePart == 1) ? "1部" : (($reservePart == 2) ? "2部" : "3部");
 
-                            $reserve = $day->authReserveDate($day->everyDay())->first();
-                            $reservePart = $reserve->setting_part;
-                            $reservePartText = ($reservePart == 1) ? "1部" : (($reservePart == 2) ? "2部" : "3部");
+           // 削除リンクを表示 (aタグに変更)
+          $html[] = '<a href="#" class="btn btn-danger p-0 w-75 delete-reserve" data-reserve-id="' . $reserve->id . '" data-reserve-part="' . $reservePartText . '" data-reserve-date="' . $day->everyDay() . '" style="font-size:12px" data-toggle="modal" data-target="#cancelModal">' . $reservePartText . '</a>';
 
-                            // 削除リンクを表示 (aタグに変更)
-                            $html[] = '<a href="#" class="btn btn-danger p-0 w-75 delete-reserve" data-reserve-id="' . $reserve->id . '" data-reserve-part="' . $reservePartText . '" data-reserve-date="' . $day->everyDay() . '" style="font-size:12px" data-toggle="modal" data-target="#cancelModal">' . $reservePartText . '</a>';
-
-              $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
-
-
+          $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
             }
           } else {
             $html[] = $day->selectPart($day->everyDay());
