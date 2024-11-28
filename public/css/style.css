@@ -211,8 +211,9 @@ li {
 
 .p-d {
   text-align: center;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   font-size: 17px;
+  padding-top: 2px;
 }
 
 .calendar-plus {
