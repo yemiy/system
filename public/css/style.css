@@ -203,6 +203,61 @@ li {
   text-align: center;
 }
 
+
+.y-ti {
+  font-size: 20px;
+}
+
+.r-list:nth-child(odd) {
+  background-color: #ccf7ff;
+  height: 38px;
+}
+
+.r-list:nth-child(even) {
+  background-color: #ffffff;
+  height: 38px;
+}
+
+.r-top th {
+  background-color: #03aad2;
+  color: #fff;
+  padding-left: 55px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  /* 水平方向の中央揃え */
+  align-items: center;
+  /* 垂直方向の中央揃え */
+  height: 100vh;
+  /* ビューポート全体の高さ */
+  margin: 0;
+  border-radius: 5px;
+
+}
+
+.list-back {
+  background: #fff;
+  padding: 10px;
+}
+
+.r-i {
+  padding-left: 55px;
+  width: 100px;
+}
+
+
+.r-u {
+  padding-left: 35px;
+  width: 350px;
+}
+
+.r-r {
+  padding-left: 45px;
+  width: 350px;
+}
+
 /* 調整エリアのボタン */
 .adjust-table-btn {
   padding-top: 20px;
@@ -241,10 +296,6 @@ li {
   border-top: none;
 }
 
-
-.fin {
-  margin-top: 10px;
-}
 
 /* モーダル */
 .modal {

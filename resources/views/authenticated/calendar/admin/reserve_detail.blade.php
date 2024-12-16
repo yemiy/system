@@ -1,14 +1,16 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="vh-100 d-flex" style="align-items:center; justify-content:center;">
-  <div class="w-50 m-auto h-75">
+<div class="content-wrapper">
 
-    <p><span>{{ $date}}日</span><span class="ml-3"> {{ $part}}部</span></p>
+  <div class="w-0 m-auto h-75">
 
-    <div class="h-75 border">
+    <p class="y-ti"><span>{{ $date}}日</span><span class="ml-3"> {{ $part}}部</span></p>
+
+
+    <div class=" list-back">
       <table class="fin">
-        <tr class="text-center">
+        <tr class="r-top">
           <th class="w-25">ID</th>
           <th class="w-25">名前</th>
           <th class="w-25">場所</th>
@@ -16,10 +18,10 @@
 
         @foreach($reservePersons as $reserve)
          @foreach($reserve->users as $user)
-        <tr class="text-center">
-          <td class="w-25">{{ $user->id }}</td>
-          <td class="w-25">{{ $user->over_name }} {{ $user->under_name}}</td>
-          <td class="w-25">リモート</td>
+        <tr class="r-list ">
+          <td class="r-i">{{ $user->id }}</td>
+          <td class="r-u">{{ $user->over_name }} {{ $user->under_name}}</td>
+          <td class="r-r">リモート</td>
         </tr>
         @endforeach
         @endforeach
