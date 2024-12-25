@@ -27,6 +27,8 @@ li {
 .log-box {
   margin-top: 35px;
   margin-left: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .log-btn {
@@ -34,6 +36,17 @@ li {
 }
 
 /*新規登録*/
+
+.m-b {
+  display: block;
+}
+
+.register_menu {
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
 .reg-btn {
   padding-bottom: 5px;
 }
@@ -92,6 +105,7 @@ li {
 .user_status {
   border-radius: 10px;
   background: #FFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -240,6 +254,7 @@ li {
 .list-back {
   background: #fff;
   padding: 10px;
+  border-radius: 8px;
 }
 
 .r-i {
@@ -249,7 +264,7 @@ li {
 
 
 .r-u {
-  padding-left: 35px;
+  padding-left: 45px;
   width: 350px;
 }
 
@@ -343,10 +358,19 @@ li {
   background: #FFF;
 }
 
-.post_area {
+.post_box {
   background: #FFF;
   border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+  /* 下部に20pxの余白を追加 */
+  padding: 20px;
+  /* 内側の余白を追加 */
+  width: 800px;
+  margin-left: 135px;
 }
+
+
 
 /*いいね・コメントボタン*/
 
@@ -419,9 +443,9 @@ li {
   /*左端に配置*/
   background: #03AAD2;
   color: #fff;
-  margin-top: 6px;
+  margin-top: 3px;
   border-radius: 7px;
-  padding: 6px 9px 0 9px;
+  padding: 3px 9px 0 9px;
 
 }
 
@@ -538,7 +562,7 @@ li {
 
 .m-c-name {
   margin-bottom: 15px;
-  width: 255px;
+  width: 2px;
 }
 
 
@@ -574,6 +598,9 @@ li {
   justify-content: space-between;
 }
 
+
+
+
 /* 掲示板 コメント */
 .comment_container {
   background: #FFF;
@@ -603,7 +630,6 @@ li {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-
 }
 
 .post_status span {
@@ -766,12 +792,11 @@ li {
 .search_conditions {
   margin-bottom: 7px;
   margin-top: 20px;
-
 }
+
 
 .search_conditions summary {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 10px 0 5px 5px;
@@ -779,6 +804,7 @@ li {
   cursor: pointer;
   border-bottom: 2px solid #d0d0d0;
 }
+
 
 .search_conditions summary::-webkit-details-marker {
   display: none;
@@ -806,6 +832,11 @@ li {
   padding-top: 15px;
 }
 
+.search_conditions_inner {
+  display: none;
+  font-size: 50px;
+}
+
 .subject_edit_btn {
   font-size: 12px;
   color: #0000FF;
@@ -814,6 +845,7 @@ li {
 
 .subject_inner {
   display: none;
+
 }
 
 .search_area {
@@ -831,4 +863,47 @@ li {
   flex-wrap: wrap;
   margin-left: 8px;
   padding-left: 8px;
+}
+
+
+
+/*科目選択の開閉*/
+.sub-plus {
+  display: inline;
+  padding-left: 10px;
+  margin-right: 16px;
+}
+
+.search_conditions1 {
+  margin-bottom: 7px;
+  margin-top: 20px;
+}
+
+.search_conditions1 summary {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 0 5px 5px;
+  color: #03AAD2;
+  cursor: pointer;
+}
+
+.search_conditions1 summary::-webkit-details-marker {
+  display: none;
+}
+
+.search_conditions1 summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  border-bottom: 3px solid #03AAD2;
+  border-right: 3px solid #03AAD2;
+  content: '';
+  transition: transform .3s;
+
+}
+
+.search_conditions1[open] summary::after {
+  transform: rotate(225deg);
 }

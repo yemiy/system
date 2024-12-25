@@ -17,7 +17,7 @@
   <form action="{{ route('registerPost') }}" method="POST" style="background-color:#ECF1F6">
 
     <div class="w-130 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="vh-75 border p-3 register_menu" style="background-color:#FFFFFF"> <!-- classにw-25いる？ -->
+      <div class="vh-75 border p-3 register_menu" style="background-color:#FFFFFF">
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
@@ -74,11 +74,11 @@
           <input type="radio" name="sex" class="sex" value="2">
           <label style="font-size:13px">女性</label>
           <input type="radio" name="sex" class="sex" value="3">
-          <label style="font-size:13px">その他</label>
+          <label class="f-right">その他</label>
         </div>
         <!-- 生年月日 -->
         <span class="text-danger">{{$errors->first('birth_day')}}</span>
-        <div class="mb-3">
+        <div class="f-m">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
           <select class="old_year" name="old_year">
             <option value="none">-----</option>

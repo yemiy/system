@@ -1,17 +1,15 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="board_area w-100 border m-auto d-flex">
+<div class="board_area w-100  m-auto d-flex">
 
   <div class="post_view w-75 mt-5">
-    <p class="w-75 m-auto">投稿一覧</p>
+
     @foreach($posts as $post)
-    <div class="post_area border w-75 m-auto p-3">
+    <div class="post_box">
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
 
       <p ><a href="{{ route('post.detail', ['id' => $post->id]) }}" class="post-title" >{{ $post->post_title }}</a></p>
-
-
 
       <div class="post_bottom_area d-flex">
 
@@ -62,19 +60,24 @@
 
       <input type="submit" name="my_posts" class="category_btn-2" value="自分の投稿" form="postSearchRequest">
 
-   <ul class="cate-list">
+   <ul class="search_conditions">
+    <p style="padding-top:20px">カテゴリー検索</p>
+
 @foreach($categories as $mainCategory)
-    <li class="main_category" category_id="{{ $mainCategory->id }}">
+    <summary category_id="{{ $mainCategory->id }}">
         <a href="{{ route('post.category', ['id' => $mainCategory->id]) }}">{{ $mainCategory->main_category }}</a>
-    </li>
+    </summary>
+    <div class="search_conditions_inner">
     @if($mainCategory->subCategories->isNotEmpty())
-        <ul class="sub-list">
+
+
             @foreach($mainCategory->subCategories as $subCategory)
                 <li>
                     <a href="{{ route('post.category', ['id' => $subCategory->id]) }}">{{ $subCategory->sub_category }}</a>
                 </li>
             @endforeach
-        </ul>
+</div>
+
     @endif
 @endforeach
 </ul>

@@ -5,8 +5,7 @@
 
   <div class="w-0 m-auto h-75">
 
-    <p class="y-ti"><span>{{ $date}}日</span><span class="ml-3"> {{ $part}}部</span></p>
-
+    <p class="y-ti"><span class="ml-3">{{ $date->format('Y年n月j日') }}</span></p>
 
     <div class=" list-back">
       <table class="fin">

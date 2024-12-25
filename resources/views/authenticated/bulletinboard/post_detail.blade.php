@@ -50,7 +50,7 @@
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
           <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
-          <input type="submit" class="btn btn-primary d-block" value="編集" onclick="">
+          <input type="submit" class="btn btn-primary d-block" value="編集" onclick="" >
 
         </div>
       </div>
@@ -79,7 +79,7 @@
         <div class="comment_container">
           <span class="">コメント</span>
           @foreach($post->postComments as $comment)
-          <div class="comment_area border-top">
+          <div class="comment_area ">
             <p>
               <span>{{ $comment->commentUser($comment->user_id)->over_name }}</span>
               <span>{{ $comment->commentUser($comment->user_id)->under_name }}</span>さん
@@ -94,7 +94,7 @@
 
 
   <div class="w-50 p-3">
-    <div class="comment_container border m-5">
+    <div class="comment_container m-5">
       <div class="comment_area p-3">
                    @if($errors->has('comment'))
             <span class="error_message">{{ $errors->first('comment') }}</span>
